@@ -1,0 +1,117 @@
+@table-row-height: 40px;
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: none;
+}
+
+.table > thead {
+  display: table-header-group;
+  width: 100%;
+  max-width: 100%;
+}
+
+.table > thead > tr > th {
+  border: none;
+  text-transform: uppercase;
+  color: @font-content-header-color;
+  font-size: @font-content-header-font-size;
+  font-family: @font-content-header-font-family;
+  font-weight: 400;
+}
+
+.table > thead > tr > th:last-child {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.table > tbody {
+  border-radius: @border-radius-default;
+  display: table-row-group;
+  width: 100%;
+  max-width: 100%;
+}
+
+.table > tbody > tr:first-child td:first-child {
+    border-radius: @border-radius-default 0 0 0;
+}
+.table > tbody > tr:first-child td:last-child {
+    border-radius: 0 @border-radius-default 0 0;
+}
+.table > tbody > tr:last-child td:last-child {
+    border-radius: 0 0 @border-radius-default 0;
+}
+.table > tbody > tr:last-child td:first-child {
+    border-radius: 0 0 0 @border-radius-default;
+}
+.table > tbody > tr > td {
+    border-top: 1px solid @color-stone;
+}
+.table > tbody > td {
+    border-top: solid 1px @color-stone;
+}
+.table > tbody > tr > td:last-child {
+    border-right: solid 1px @color-stone;
+}
+.table > tbody > tr > td:first-child {
+    border-left: solid 1px @color-stone;
+}
+.table > tbody > tr:last-child > td {
+    border-bottom: solid 1px @color-stone;
+}
+
+.table > tbody > tr {
+  height: @table-row-height;
+}
+
+.table > tbody > tr > td {
+  padding: 8px;
+  background-color: @color-white;
+  font-size: 12px;
+  color: @color-asphalt;
+  line-height: @table-row-height;
+  vertical-align: baseline;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table > tbody > tr > td.icon {
+  padding: 8px 0 8px 8px;
+  width: @table-row-height;
+}
+
+.table > tbody > tr > td.icon > span {
+  color: @color-primary;
+  font-size: 18px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  width: @table-row-height;
+}
+
+.table > tbody > tr > td.name {
+  color: @color-asphalt;
+  font-size: 14px;
+}
+
+.table > tbody > tr > td.description,
+.table > tbody > tr > td.members {
+  color: @color-steel;
+}
+
+.table > tbody > tr > td.basepath {
+  letter-spacing: 0;
+  color: @color-asphalt;
+  font-size: @font-code-font-size;
+  font-family: @font-code-font-family;
+}
+.table > tbody > tr > td.date {
+  color: @color-asphalt;
+  text-align: right;
+}
+
+.table > tbody > tr > td:last-child {
+  padding-right: 20px;
+}

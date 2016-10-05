@@ -1,0 +1,269 @@
+// form controls section
+// text inputs
+.form-control {
+    margin-bottom: 20px;
+    color: @color-text;
+}
+
+.has-success .form-control,
+.has-success .form-control:focus {
+    border-color: @color-success;
+}
+
+.has-warning .form-control,
+.has-warning .form-control:focus {
+    border-color: @color-warning;
+}
+
+.has-error .form-control,
+.has-error .form-control:focus {
+    border-color: @color-danger;
+}
+
+// adjust for extra pixel on bottom border for focus
+input[type=text]:focus {
+    padding-bottom: 5px;
+    &.input-lg {
+        padding: 10px 0 10px 0;
+    }
+    &.input-sm {
+        padding: 5px 0 4px 0;
+    }
+}
+
+input[type=text].form-control,
+textarea.form-control {
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    padding-left: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    &::selection {
+        background: lighten(@color-maya, 26%);
+    }
+    &.form-control:focus {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border-bottom-width: 2px;
+        @include transition(0.1s);
+    }
+    &.form-control:disabled {
+        background-color: @color-ghost;
+        border-bottom: 1px dashed @color-earl-grey;
+        color: @color-piston;
+    }
+}
+
+@keyframes hover-color {
+    from {
+        border-color: @color-piston;
+    }
+    to {
+        border-color: @color-cobalt;
+    }
+}
+
+/* @Keyframes for Chrome and Safari */
+@-webkit-keyframes bounce {
+    0%  { -webkit-transform:scale(.8); opacity:.8}
+    25% { -webkit-transform:scale(.25); opacity:.25}
+    50% { -webkit-transform:scale(1.4); opacity:1.4}
+    75% { -webkit-transform:scale(.8); opacity:.8}
+    100%{ -webkit-transform:scale(1); opacity:1}
+}
+@keyframes bounce {
+    0%  { transform:scale(.8); opacity:.8}
+    25% { transform:scale(.25); opacity:.25}
+    50% { transform:scale(1.4); opacity:1.4}
+    75% { transform:scale(.8); opacity:.8}
+    100%{ transform:scale(1); opacity:1}
+}
+@-webkit-keyframes bounceout {
+    0%  { -webkit-transform:scale(0)}
+    25% { -webkit-transform:scale(.8)}
+    50% { -webkit-transform:scale(1.4)}
+    75% { -webkit-transform:scale(.25)}
+    100%{ -webkit-transform:scale(0)}
+}
+@keyframes bounceout {
+    0%  { transform:scale(0)}
+    25% { transform:scale(.8)}
+    50% { transform:scale(1.4)}
+    75% { transform:scale(.25)}
+    100%{ transform:scale(0)}
+}
+
+.radio,
+.checkbox,
+.checkbox-inline {
+    position: absolute;
+    display: none;
+}
+
+.radio[disabled],
+.checkbox[disabled] {
+    cursor: not-allowed;
+}
+
+.radio + label,
+.checkbox + label {
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.radio + label:hover:before,
+.checkbox + label:hover:before {
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    animation-name: hover-color;
+}
+
+.radio + label:before,
+.checkbox + label:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    content: '';
+    border: 1px solid @color-piston;
+}
+
+.radio + label:after,
+.checkbox + label:after {
+    position: absolute;
+    display: none;
+    content: '';
+}
+
+.radio[disabled] + label,
+.checkbox[disabled] + label {
+    cursor: not-allowed;
+    color: @color-earl-grey;
+}
+
+.radio[disabled] + label:hover,
+.radio[disabled] + label:before,
+.radio[disabled] + label:after,
+.checkbox[disabled] + label:hover,
+.checkbox[disabled] + label:before,
+.checkbox[disabled] + label:after {
+    cursor: not-allowed;
+}
+
+.radio[disabled] + label:hover:before,
+.checkbox[disabled] + label:hover:before {
+    border: 1px solid @color-earl-grey;
+    animation-name: none;
+}
+
+.radio[disabled] + label:before,
+.checkbox[disabled] + label:before {
+    border-color: @color-earl-grey;
+}
+
+.radio:checked + label:before,
+.checkbox:checked + label:before {
+    //animation-name: none;
+}
+
+.radio:checked + label:after,
+.checkbox:checked + label:after {
+    display: block;
+}
+
+.radio + label:before {
+    border-radius: 50%;
+}
+
+.radio + label:after {
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: @color-primary;
+    -webkit-animation:bounce 0.5s;
+    -webkit-animation-iteration-count:1;
+    -webkit-animation-fill-mode:forwards;
+ 
+    -moz-animation:bounce 0.5s;
+    -moz-animation-iteration-count:1;
+    -moz-animation-fill-mode:forwards;
+ 
+    animation:bounce 0.5s;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards;
+}
+
+.radio:checked + label:before {
+    border: 1px solid @color-piston;
+}
+
+.radio:checked[disabled] + label:before {
+    border: 1px solid @color-earl-grey;
+}
+
+.radio:checked[disabled] + label:after {
+    background: #c9e2f9;
+}
+
+.checkbox + label:before {
+    border-radius: 3px;
+}
+
+.checkbox + label:after {
+    top: 2px;
+    left: 7px;
+    box-sizing: border-box;
+    width: 6px;
+    height: 12px;
+    transform: rotate(45deg);
+    border-width: 2px;
+    border-style: solid;
+    border-color: @color-success;
+    border-top: 0;
+    border-left: 0;
+    transition: all .2s;
+}
+
+
+.checkbox:checked + label:before {
+    border: 1px solid @color-piston;
+    background: #FFFFFF;
+}
+
+.checkbox:checked[disabled] + label:before {
+    border: 1px solid @color-earl-grey;
+    background: #FFFFFF;
+}
+
+.checkbox[disabled] + label:after {
+    border-color: @color-earl-grey;
+}
+
+.checkbox-inline {
+    position: relative;
+    display: inline-block;
+    padding-left: 0px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.radio-inline {
+    position: relative;
+    display: inline-block;
+    padding-left: 0px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    font-weight: normal;
+    cursor: pointer;
+}

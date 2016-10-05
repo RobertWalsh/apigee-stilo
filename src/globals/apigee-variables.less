@@ -1,4 +1,84 @@
+//
+// Misc. Variables
+// --------------------------------------------------
+
 @min-width: 1000px;
 @context-bar-height: 60px;
 @general-margin: 20px;
 @fontAwesome: FontAwesome;
+@pressed-darken-amount: 10%;
+@active-darken-amount: 5%;
+@border-radius-default: 3px;
+@duration-default: 0.2;
+
+//
+// Bootstrap Overrides
+// --------------------------------------------------
+
+@btn-default-bg-hover: @color-ghost;
+@border-radius-default-base: @border-radius-default;
+@input-border-radius: 0;
+@input-border-radius-small: 0;
+@input-border-radius-large: 0;
+@btn-border-radius-small: 2.2px;
+@btn-border-radius-base: @border-radius-default-base;
+@btn-border-radius-large: 4px;
+@table-border-color: @color-earl-grey;
+@tooltip-bg: @color-text-hover;
+
+//
+// Buttons
+// --------------------------------------------------
+
+@btn-default-color:                 @color-text;
+@btn-default-bg:                    @color-white;
+@btn-default-bg-hover:              @color-ghost;   
+@btn-default-border:                @btn-default-bg;
+
+@btn-light-color:                   @color-tungsten;
+@btn-light-bg:                      @color-ghost;
+@btn-light-bg-hover:                @color-smoke;   
+@btn-light-border:                  @btn-light-bg;
+
+@btn-primary-color:                 @color-white;
+@btn-primary-bg:                    @color-primary;
+@btn-primary-bg-hover:              lighten(@color-primary, 6%);   
+@btn-primary-border:                @btn-primary-bg;
+
+@btn-success-color:                 @color-white;
+@btn-success-bg:                    @color-success;
+@btn-success-bg-hover:              lighten(@color-success, 2%);   
+@btn-success-border:                @btn-success-bg;
+
+@btn-info-color:                    @color-white;
+@btn-info-bg:                       @color-text;
+@btn-info-bg-hover:                 lighten(@color-text, 6%);   
+@btn-info-border:                   @btn-info-bg;
+
+@btn-warning-color:                 @color-white;
+@btn-warning-bg:                    @color-warning;
+@btn-warning-bg-hover:              lighten(@color-warning, 6%);   
+@btn-warning-border:                @btn-warning-bg;
+
+@btn-danger-color:                  @color-white;
+@btn-danger-bg:                     @color-danger;
+@btn-danger-bg-hover:               lighten(@color-danger, 6%);   
+@btn-danger-border:                 @btn-danger-bg;
+
+@btn-cancel-color:                  @color-steel;
+@btn-cancel-color-hover:            darken(@btn-cancel-color, 30%);   
+@btn-cancel-bg:                     @color-white;
+@btn-cancel-bg-hover:               @btn-cancel-bg;
+@btn-cancel-border:                 @btn-cancel-bg;
+
+@btn-link-disabled-color:           @gray-light;
+
+// Mixins
+
+.box-shadow-none() {
+    box-shadow: 0 0 0 0 #fff;
+}
+
+.default-transition() {
+    transition: all 0.2s ease-out;
+}
