@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+	<div class="container">
+		<nav class="navbar navbar-light bg-faded">
+			<ul class="nav navbar-nav">
+				<h3 class="text-muted">Tour of Heroes</h3>
+				<nav class="navbar nav-justified">		  
+					<ul class="nav nav-tabs">
+
+						<!-- NAVIGATION ITEMS -->
+						<li class="nav-item">
+							<a class="nav-link active" 
+								routerLink="/dashboard" 
+								routerLinkActive="active">Dashboard</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link active" 
+								routerLink="/heroes" 
+								routerLinkActive="active">Heroes</a>
+						</li>
+
+						<!-- SEARCH -->
+						<hero-search></hero-search>
+
+					</ul>
+				</nav>
+			</ul>          
+		</nav>
+
+		<!-- Page/Router Content -->
+		<router-outlet></router-outlet>
+
+	</div>
+</body>
+</html>

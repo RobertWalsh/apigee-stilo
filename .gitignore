@@ -47,3 +47,4 @@ jspm_packages
 # Build
 /build
 *.tgz
+.DS_Store

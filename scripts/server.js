@@ -13,20 +13,24 @@ const webpackSever = require('./webpack.server');
 const port =  3000;
 
 // We point our static assets to a dummy folder, so that when requesting for /build/* node doesn't use the built
-// files in the real folder.
-var publicPath = path.resolve(basePath, 'tmp');
-app.use('/', express.static(publicPath));
+// // files in the real folder.
+// var publicPath = path.resolve(basePath, 'tmp');
+// app.use('/', express.static(publicPath));
+
+var nodeModulesPath = path.resolve(basePath, 'node_modules');
+app.use('/node_modules', express.static(nodeModulesPath));
+
+var appPath = path.resolve(basePath, 'app');
+app.use('/app', express.static(appPath));
 
 // As we are using a dummy folder as our root, we need to set the path for index.html and other files explicitly.
 // This is a bit of an issue, but I'm not expecting to add many static files anyway.
 app.get('/', function(request, response){
     response.sendFile(path.resolve(basePath, './docs/index.html'));
 });
-app.get('/demo.css', function(request, response){
-    response.sendFile(path.resolve(basePath, './docs/demo.css'));
-});
-app.get('/ico32.png', function(request, response){
-    response.sendFile(path.resolve(basePath, './docs/ico32.png'));
+
+app.get('/:file', function(request, response){
+    response.sendFile(path.resolve(basePath, './docs/' + request.params.file));
 });
 
 webpackSever();
